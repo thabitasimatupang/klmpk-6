@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- A. STRUKTUR & SETUP -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Konser Judika - IAKN Tarutung</title>
+    
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar Sederhana -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">IAKN <span class="text-warning">TARUTUNG</span></a>
+            <div class="ms-auto">
+                <a href="index.html" class="btn btn-outline-light btn-sm">Kembali ke Beranda</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <!-- A. FORM PENDAFTARAN (15 Poin) -->
+        <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm mx-auto" style="max-width: 850px;">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Form Pendaftaran Konser</h2>
+                <p class="text-muted">Isi data diri Anda dengan lengkap untuk mendapatkan tiket</p>
+            </div>
+            
+            <!-- C. VALIDASI CLIENT-SIDE (5 Poin) -->
+            <form id="regForm" class="needs-validation" novalidate>
+                <div class="row g-3">
+                    <!-- Input: Nama Lengkap -->
+                    <div class="col-md-6">
+                        <label for="nama" class="form-label fw-semibold">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="nama" placeholder="Contoh: Budi Santoso" required>
+                        <div class="invalid-feedback">Nama lengkap wajib diisi.</div>
+                    </div>
+
+                    <!-- Input: Email (Format Validasi Otomatis) -->
+                    <div class="col-md-6">
+                        <label for="email" class="form-label fw-semibold">Alamat Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="nama@email.com" required>
+                        <div class="invalid-feedback">Masukkan format email yang valid.</div>
+                    </div>
+
+                    <!-- Input: Nomor Telepon (Hanya Angka via Pattern) -->
+                    <div class="col-md-6">
+                        <label for="telp" class="form-label fw-semibold">Nomor Telepon</label>
+                        <input type="tel" class="form-control" id="telp" pattern="[0-9]+" placeholder="081234567xx" required>
+                        <div class="invalid-feedback">Nomor telepon hanya menerima angka.</div>
+                    </div>
+
+                    <!-- Input: Tanggal Lahir -->
+                    <div class="col-md-6">
+                        <label for="tglLahir" class="form-label fw-semibold">Tanggal Lahir</label>
+                        <input type="date" class="form-control" id="tglLahir" required>
+                        <div class="invalid-feedback">Pilih tanggal lahir Anda.</div>
+                    </div>
+
+                    <!-- Select: Jenis Kelamin -->
+                    <div class="col-md-6">
+                        <label for="jk" class="form-label fw-semibold">Jenis Kelamin</label>
+                        <select class="form-select" id="jk" required>
+                            <option value="" selected disabled>Pilih Jenis Kelamin...</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                        <div class="invalid-feedback">Pilih jenis kelamin.</div>
+                    </div>
+
+                    <!-- Select: Provinsi (Minimal 5 Pilihan) -->
+                    <div class="col-md-6">
+                        <label for="provinsi" class="form-label fw-semibold">Provinsi</label>
+                        <select class="form-select" id="provinsi" required>
+                            <option value="" selected disabled>Pilih Provinsi...</option>
+                            <option value="Sumatera Utara">Sumatera Utara</option>
+                            <option value="Sumatera Barat">Sumatera Barat</option>
+                            <option value="Aceh">Aceh</option>
+                            <option value="Riau">Riau</option>
+                            <option value="Jambi">Jambi</option>
+                        </select>
+                        <div class="invalid-feedback">Pilih provinsi asal Anda.</div>
+                    </div>
+
+                    <!-- Textarea: Alamat Lengkap -->
+                    <div class="col-12">
+                        <label for="alamat" class="form-label fw-semibold">Alamat Lengkap</label>
+                        <textarea class="form-control" id="alamat" rows="3" placeholder="Nama jalan, Nomor rumah, RT/RW, Kecamatan..." required></textarea>
+                        <div class="invalid-feedback">Alamat lengkap wajib diisi.</div>
+                    </div>
+
+                    <!-- Radio Button: Pilih Paket -->
+                    <div class="col-12 my-2">
+                        <label class="form-label d-block fw-semibold">Pilih Paket Konser</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="paket" id="p1" value="Basic (Bronze)" checked>
+                            <label class="form-check-label" for="p1">Basic</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="paket" id="p2" value="Standard (Silver)">
+                            <label class="form-check-label" for="p2">Standard</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="paket" id="p3" value="Premium (Gold)">
+                            <label class="form-check-label" for="p3">Premium</label>
+                        </div>
+                    </div>
+
+                    <!-- Checkbox: Persetujuan -->
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="setuju" required>
+                            <label class="form-check-label" for="setuju">
+                                Saya menyetujui syarat dan ketentuan yang berlaku.
+                            </label>
+                            <div class="invalid-feedback">Anda harus mencentang persetujuan sebelum submit.</div>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Aksi -->
+                    <div class="col-12 mt-4 d-flex gap-2 justify-content-center">
+                        <button type="submit" class="btn btn-primary px-5 py-2 fw-bold">Submit Pendaftaran</button>
+                        <button type="reset" class="btn btn-outline-secondary px-5 py-2">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- B. MODAL KONFIRMASI (10 Poin) -->
+    <!-- Menggunakan .modal-dialog-centered dan animasi fade -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title fw-bold" id="confirmModalLabel">Konfirmasi Pendaftaran</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-muted">Silakan periksa kembali ringkasan data Anda sebelum konfirmasi:</p>
+                    <div class="bg-light p-3 rounded-3">
+                        <div class="row mb-2">
+                            <div class="col-4 fw-bold">Nama:</div>
+                            <div class="col-8" id="resNama">-</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4 fw-bold">Email:</div>
+                            <div class="col-8" id="resEmail">-</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 fw-bold">Paket:</div>
+                            <div class="col-8"><span class="badge bg-info text-dark" id="resPaket">-</span></div>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning mt-3 small mb-0">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>Pastikan alamat email Anda aktif untuk pengiriman E-Tiket.
+                    </div>
+                </div>
+                <div class="modal-footer bg-light border-0">
+                    <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Batal</button>
+                    <a href="dashboard.html" class="btn btn-primary px-4">Konfirmasi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Logika Validasi dan Modal Dinamis
+        (() => {
+            'use strict'
+
+            const form = document.getElementById('regForm');
+            
+            form.addEventListener('submit', event => {
+                // Cek Validitas Form (Poin C)
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    event.preventDefault(); // Mencegah submit default agar modal muncul
+                    
+                    // Mengambil data untuk ringkasan di Modal (Poin B)
+                    document.getElementById('resNama').innerText = document.getElementById('nama').value;
+                    document.getElementById('resEmail').innerText = document.getElementById('email').value;
+                    
+                    // Mendapatkan nilai radio paket yang dipilih
+                    const paketTerpilih = document.querySelector('input[name="paket"]:checked').value;
+                    document.getElementById('resPaket').innerText = paketTerpilih;
+
+                    // Menampilkan Modal menggunakan Instance Bootstrap
+                    const modalKonfirmasi = new bootstrap.Modal(document.getElementById('confirmModal'));
+                    modalKonfirmasi.show();
+                }
+
+                form.classList.add('was-validated');
+            }, false);
+
+            // Reset form juga menghapus state validasi
+            form.addEventListener('reset', () => {
+                form.classList.remove('was-validated');
+            });
+        })();
+    </script>
+</body>
+</html>

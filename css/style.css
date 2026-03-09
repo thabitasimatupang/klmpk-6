@@ -1,0 +1,178 @@
+/* A. STRUKTUR & SETUP (Custom CSS)
+   Bagian ini mendefinisikan variabel global dan pengaturan dasar halaman.
+*/
+
+:root {
+    --primary-color: #0d6efd; /* Warna biru utama (Bootstrap primary) */
+    --accent-color: #ffc107;  /* Warna kuning untuk aksen/highlight */
+    --dark-bg: #0f0e0e;      /* Warna gelap untuk navbar dan sidebar */
+    --sidebar-width: 280px;   /* Lebar default sidebar dashboard */
+    --light-bg: #f8f9fa;     /* Warna latar belakang area konten */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth; /* Memberikan efek scroll halus saat navigasi anchor */
+    background-color: var(--light-bg);
+}
+
+/* B. NAVBAR CUSTOM (Untuk index.html)
+   Mengatur transparansi dan transisi navbar saat di-scroll.
+*/
+.navbar {
+    transition: all 0.4s ease-in-out; /* Transisi halus untuk perubahan padding/warna */
+    padding: 20px 0;
+}
+
+/* Class 'scrolled' ditambahkan via JavaScript saat user melakukan scroll */
+.navbar.scrolled {
+    background-color: var(--dark-bg) !important;
+    padding: 10px 0;
+    box-shadow: 0 4px 15px rgba(33, 10, 10, 0.561);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* C. HERO SECTION CUSTOM (Untuk index.html)
+   Menyediakan tampilan utama dengan gambar latar belakang full screen.
+*/
+.hero-section {
+    /* Overlay gradient hitam agar teks putih tetap terbaca jelas di atas gambar */
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                url('../img/judika-concert.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efek parallax saat di-scroll */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+/* D. KONTEN UTAMA & DASHBOARD (Card Custom)
+   Standardisasi desain kartu untuk paket tiket dan statistik.
+*/
+.card-custom, .card {
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Efek angkat (hover) saat mouse diarahkan ke kartu */
+.card-custom:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+}
+
+/* E. SIDEBAR DASHBOARD CUSTOM (Untuk dashboard.html)
+   Mengatur tampilan menu navigasi admin di sisi kiri.
+*/
+.sidebar {
+    min-height: 100vh;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+/* Styling link navigasi di dalam sidebar */
+.sidebar .nav-link {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 12px 20px;
+    margin: 4px 10px;
+    transition: all 0.3s ease;
+}
+
+/* Efek hover pada menu sidebar: berubah warna dan sedikit bergeser ke kanan */
+.sidebar .nav-link:hover {
+    color: var(--accent-color) !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* Gaya untuk menu yang sedang aktif (selected) */
+.sidebar .nav-link.active {
+    color: #fff !important;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+}
+
+.sidebar .nav-link i {
+    font-size: 1.1rem;
+}
+
+/* F. DASHBOARD UTILS (Tabel & Statistik)
+   Kustomisasi elemen data agar lebih profesional.
+*/
+.table-responsive {
+    border-radius: 10px;
+}
+
+/* Styling header tabel agar terlihat modern */
+.table thead th {
+    background-color: #f1f3f5;
+    color: #495057;
+    border-bottom: 2px solid #dee2e6;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    padding: 15px;
+}
+
+.table tbody td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+/* Efek visual dekoratif pada kartu statistik dashboard */
+.card.bg-primary, .card.bg-success, .card.bg-warning, .card.bg-danger {
+    overflow: hidden;
+    position: relative;
+}
+
+/* Lingkaran abstrak transparan di pojok kanan bawah kartu */
+.card.bg-primary::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    bottom: -20px;
+    right: -20px;
+}
+
+/* Pengaturan badge status di dalam tabel */
+.badge {
+    padding: 0.6em 1em;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+/* G. RESPONSIVE ADJUSTMENTS
+   Mengatur tampilan agar tetap rapi di perangkat mobile/tablet.
+*/
+@media (max-width: 767.98px) {
+    .sidebar {
+        min-height: auto;
+        position: relative;
+        box-shadow: none;
+    }
+    
+    .sidebar .nav-link {
+        margin: 2px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Mengecilkan ukuran font pada layar sangat kecil agar tidak berantakan */
+    .hero-section h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .display-2 {
+        font-size: 2.8rem;
+    }
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- A. STRUKTUR & SETUP -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konser Judika di IAKN Tarutung</title>
+
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS (Poin A) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- B. NAVBAR (Poin B) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-music-note-beamed text-warning me-2"></i>IAKN <span class="text-warning">TARUTUNG</span>
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tiket">Paket Tiket</a></li>
+                    <li class="nav-item"><a class="nav-link" href="form_pendaftaran.html">Pendaftaran</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- C. HERO SECTION (Poin C) -->
+    <!-- Background Gambar diatur melalui style.css pada class .hero-section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 text-white">
+                    <h1 class="display-2 fw-bold mb-3">JUDIKA <span class="text-warning">LIVE IN CONCERT</span></h1>
+                    <p class="lead mb-5 fs-4">Rasakan harmoni malam yang tak terlupakan di Kampus IAKN Tarutung. Suara emas Judika siap menemani kerinduanmu akan musik berkualitas.</p>
+                    
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#tiket" class="btn btn-warning btn-lg px-4 py-3 fw-bold rounded-pill shadow">
+                            <i class="bi bi-ticket-perforated me-2"></i>Pesan Tiket Sekarang
+                        </a>
+                        <a href="form_pendaftaran.html" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill">
+                            Daftar Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- D. KONTEN UTAMA - PAKET TIKET (Poin D) -->
+    <section id="tiket" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="text-primary fw-bold text-uppercase tracking-widest">Penawaran Eksklusif</h2>
+                <h3 class="display-5 fw-bold">Pilih Pengalaman Anda</h3>
+                <div class="mx-auto bg-warning" style="height: 4px; width: 60px;"></div>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <!-- Card 1: Bronze -->
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card card-custom h-100 shadow-sm">
+                        <!-- Gambar Produk dari folder img/ -->
+                        <img src="img/ticket-bronze.jpg" class="card-img-top" alt="Tiket Bronze">
+                        <div class="card-body p-4 text-center">
+                            <h4 class="card-title fw-bold mb-3">Paket Bronze</h4>
+                            <p class="card-text text-muted mb-4">Akses festival area B dengan pandangan luas ke arah panggung utama. Cocok untuk Anda yang ingin seru-seruan bareng teman.</p>
+                            <h3 class="fw-bold mb-4 text-primary">Rp 150.000</h3>
+                            <a href="form_pendaftaran.html" class="btn btn-outline-primary w-100 rounded-pill">Pilih Bronze</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Silver -->
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card card-custom h-100 shadow border-primary">
+                        <!-- Gambar Produk dari folder img/ -->
+                        <img src="img/ticket-silver.jpg" class="card-img-top" alt="Tiket Silver">
+                        <div class="card-body p-4 text-center">
+                            <h4 class="card-title fw-bold mb-3">Paket Silver</h4>
+                            <p class="card-text text-muted mb-4">Akses festival area A (depan panggung). Mendapatkan Official Merchandise dan Snack Box eksklusif IAKN.</p>
+                            <h3 class="fw-bold mb-4 text-primary">Rp 350.000</h3>
+                            <a href="form_pendaftaran.html" class="btn btn-outline-secondary w-100 rounded-pill shadow">Pilih Silver</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Gold VIP -->
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card card-custom h-100 shadow-sm">
+                        <!-- Gambar Produk dari folder img/ -->
+                        <img src="img/ticket-gold.jpg" class="card-img-top" alt="Tiket Gold VIP">
+                        <div class="card-body p-4 text-center">
+                            <h4 class="card-title fw-bold mb-3">Gold (VIP)</h4>
+                            <p class="card-text text-muted mb-4">Tempat duduk eksklusif, Sesi Meet & Greet singkat, dan makan malam prasmanan bersama panitia & tamu kehormatan.</p>
+                            <h3 class="fw-bold mb-4 text-primary">Rp 750.000</h3>
+                            <a href="form_pendaftaran.html" class="btn btn-outline-warning w-100 rounded-pill text-dark fw-bold">Pilih VIP</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <h3 class="fw-bold">IAKN Tarutung</h3>
+                    <p class="small text-muted mb-0">Jl. Raya Tarutung - Siborong-borong, Tapanuli Utara.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <p class="mb-0">&copy; 2026 Panitia Event IAKN. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainNav = document.getElementById('mainNav');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    mainNav.classList.add('scrolled');
+                } else {
+                    mainNav.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

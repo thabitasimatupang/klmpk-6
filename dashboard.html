@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- A. STRUKTUR & SETUP -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Konser Judika IAKN</title>
+    
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS sesuai struktur folder -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            <!-- A. LAYOUT SIDEBAR (10 Poin) -->
+            <!-- Sidebar di kiri dengan col-md-3, background gelap (.bg-dark) -->
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse shadow-lg">
+                <div class="position-sticky pt-3 h-100">
+                    <!-- Logo/Brand Sidebar -->
+                    <div class="px-3 mb-4 text-center">
+                        <h5 class="text-warning fw-bold"><i class="bi bi-shield-lock me-2"></i>ADMIN PANEL</h5>
+                        <hr class="text-secondary">
+                    </div>
+                    
+                    <!-- Menu Navigasi Vertikal -->
+                    <ul class="nav flex-column px-2">
+                        <li class="nav-item mb-2">
+                            <a class="nav-link active rounded-3 py-2" href="#">
+                                <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 py-2 text-white opacity-75" href="#">
+                                <i class="bi bi-people me-2"></i> Data Peserta
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 py-2 text-white opacity-75" href="#">
+                                <i class="bi bi-ticket-perforated me-2"></i> Tiket Terjual
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 py-2 text-white opacity-75" href="#">
+                                <i class="bi bi-gear me-2"></i> Pengaturan
+                            </a>
+                        </li>
+                        <li class="nav-item mt-4">
+                            <a class="nav-link rounded-3 py-2 text-danger fw-bold" href="index.html">
+                                <i class="bi bi-box-arrow-left me-2"></i> Keluar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Bagian Konten Utama (col-md-9) -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                
+                <!-- Header Dashboard -->
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-4 border-bottom">
+                    <h1 class="h2 fw-bold text-dark">Statistik Penjualan Tiket</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-calendar3 me-1"></i> Hari Ini
+                        </button>
+                    </div>
+                </div>
+
+                <!-- B. STATISTIK CARDS (10 Poin) -->
+                <!-- Layout col-6 col-md-3 (2 per baris mobile, 4 desktop) -->
+                <div class="row g-3 mb-5">
+                    <!-- Card 1: Total Pengguna -->
+                    <div class="col-6 col-md-3">
+                        <div class="card border-0 bg-primary text-white shadow-sm h-100 p-2">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <i class="bi bi-people fs-3"></i>
+                                    <span class="badge bg-white text-primary">+12%</span>
+                                </div>
+                                <h3 class="fw-bold mb-0">1,240</h3>
+                                <small class="opacity-75">Total Pengguna</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2: Penjualan Tiket -->
+                    <div class="col-6 col-md-3">
+                        <div class="card border-0 bg-success text-white shadow-sm h-100 p-2">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <i class="bi bi-cart-check fs-3"></i>
+                                    <span class="badge bg-white text-success">+8.5%</span>
+                                </div>
+                                <h3 class="fw-bold mb-0">856</h3>
+                                <small class="opacity-75">Penjualan Tiket</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3: Pendapatan -->
+                    <div class="col-6 col-md-3">
+                        <div class="card border-0 bg-warning text-dark shadow-sm h-100 p-2">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <i class="bi bi-cash-stack fs-3"></i>
+                                    <span class="badge bg-dark text-white">+5%</span>
+                                </div>
+                                <h3 class="fw-bold mb-0">92jt</h3>
+                                <small class="opacity-75">Pendapatan</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4: Kunjungan -->
+                    <div class="col-6 col-md-3">
+                        <div class="card border-0 bg-danger text-white shadow-sm h-100 p-2">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <i class="bi bi-eye fs-3"></i>
+                                    <span class="badge bg-white text-danger">-2%</span>
+                                </div>
+                                <h3 class="fw-bold mb-0">4.1k</h3>
+                                <small class="opacity-75">Kunjungan Site</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C. TABEL DATA (10 Poin) -->
+                <div class="card border-0 shadow-sm rounded-3">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="mb-0 fw-bold"><i class="bi bi-table me-2"></i>Daftar Pendaftar Terbaru</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Tabel Responsive -->
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nama Lengkap</th>
+                                        <th>Paket</th>
+                                        <th>Status</th>
+                                        <th class="text-center">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Menampilkan 10 baris data contoh -->
+                                    <script>
+                                        const names = [
+                                            "Niko Mendrofa", "Sukesia Sitanggang", "Daniel Simbolon", "Thabita Simatupang", 
+                                            "Yoga Aritonang", "Ian Zalukhu", "Perdana Manalu", "Ratna Sarumpaet", 
+                                            "Veronika Purba", "Rafi Simanjuntak"
+                                        ];
+                                        const pakets = ["Gold VIP", "Silver", "Bronze", "Silver", "Gold VIP", "Bronze", "Silver", "Bronze", "Gold VIP", "Silver"];
+                                        const statuses = ["Active", "Active", "Inactive", "Active", "Active", "Inactive", "Active", "Active", "Inactive", "Active"];
+
+                                        for (let i = 0; i < 10; i++) {
+                                            document.write(`
+                                                <tr>
+                                                    <td>#100${i + 1}</td>
+                                                    <td class="fw-semibold">${names[i]}</td>
+                                                    <td>${pakets[i]}</td>
+                                                    <td>
+                                                        <!-- Badge Status (Active/Inactive) -->
+                                                        <span class="badge rounded-pill ${statuses[i] === 'Active' ? 'bg-success-subtle text-success border border-success' : 'bg-secondary-subtle text-secondary border border-secondary'}">
+                                                            ${statuses[i]}
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <!-- Tombol Edit dan Hapus -->
+                                                        <button class="btn btn-sm btn-info text-white me-1"><i class="bi bi-pencil-square"></i></button>
+                                                        <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                            `);
+                                        }
+                                    </script>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
